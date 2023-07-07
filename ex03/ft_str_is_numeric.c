@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:24:36 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/07 19:06:57 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/07 19:13:12 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_str_is_numeric(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-
 		if (char_is_numeric(str[i]) == 0)
 		{
 			return (0);

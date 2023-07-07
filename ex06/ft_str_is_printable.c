@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 18:23:45 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/07 19:13:44 by edi-iori         ###   ########lyon.fr   */
+/*   Created: 2023/07/07 22:26:49 by edi-iori          #+#    #+#             */
+/*   Updated: 2023/07/07 22:32:36 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
-int	char_is_alpha_low(char c)
+int	char_is_printable(char c)
 {
-	if (c <= 'z' && c >= 'a')
+	if (c <= ' ' && c >= '~')
 	{
 		return (1);
 	}
 	return (0);
 }
 
-int	ft_str_is_lowercase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ int	ft_str_is_lowercase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!char_is_alpha_low(str[i]))
+		if (!char_is_printable(str[i]))
 		{
 			return (0);
 		}
@@ -41,8 +41,8 @@ int	ft_str_is_lowercase(char *str)
 }
 // int main(void)
 // {
-// 	char source[] ="asd";
+// 	char source[] ="DFG";
 // 	char *point = source;
-// 	printf("%d\n", ft_str_is_lowercase(point));
+// 	printf("%d\n", ft_str_is_printable(point));
 // 	return 0;
 // }
