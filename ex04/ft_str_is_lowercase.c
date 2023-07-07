@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 12:13:46 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/07 19:00:03 by edi-iori         ###   ########lyon.fr   */
+/*   Created: 2023/07/07 18:23:45 by edi-iori          #+#    #+#             */
+/*   Updated: 2023/07/07 19:10:00 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,7 @@ int	char_is_alpha_low(char c)
 	return (0);
 }
 
-int	char_is_alpha_up(char c)
-{
-	if (c <= 'Z' && c >= 'A')
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	char_is_alpha(char c)
-{
-	if (char_is_alpha_up(c) || char_is_alpha_low(c))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
+int ft_str_is_lowercase(char *str)
 {
 	int	i;
 
@@ -49,7 +31,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!char_is_alpha(str[i]))
+		if (!char_is_alpha_low(str[i]))
 		{
 			return (0);
 		}
@@ -59,9 +41,8 @@ int	ft_str_is_alpha(char *str)
 }
 // int main(void)
 // {
-// 	char source[] = "hel";
+// 	char source[] ="asd";
 // 	char *point = source;
-//  	ft_str_is_alpha(point);
-// 	printf("%d\n", ft_str_is_alpha(point));
+// 	printf("%d\n", ft_str_is_lowercase(point));
 // 	return 0;
 // }
