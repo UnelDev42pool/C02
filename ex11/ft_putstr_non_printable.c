@@ -1,16 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 22:26:49 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 14:31:33 by edi-iori         ###   ########lyon.fr   */
+/*   Created: 2023/07/08 11:14:43 by edi-iori          #+#    #+#             */
+/*   Updated: 2023/07/08 14:29:45 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <unistd.h>
+
+void	printHexa(int c)
+{
+	const char	backslash = '\\';
+	const char	zero = '0';
+	if(c <= 16)
+	{
+		write(1, &backslash, 1);
+		write(1, &zero, 1);
+		if(c <= 9)
+		{
+			c += 48;
+			write(1, &c, 1);
+		}
+		else 
+		{
+			c += 87;
+			write(1, &c, 1);
+		}
+	}
+	else
+	{
+		printHexa(c % 16);
+		printHexa(c / 16);
+	}
+}
+
 int	char_is_printable(char c)
 {
 	if (c <= ' ' || c >= '~')
@@ -20,30 +47,28 @@ int	char_is_printable(char c)
 	return (0);
 }
 
-int	ft_str_is_printable(char *str)
+void	ft_putstr_non_printable(char *str)
 {
-	int	i;
-
-	if (str[0] == '\0')
-	{
-		return (1);
-	}
+	int i;
+	
 	i = 0;
 	while (str[i] != '\0')
 	{
-
-		if (char_is_printable(str[i]) == 1)
+		if(!char_is_printable(str[i]) || str[i] == ' ')
 		{
-			return (0);
+			write(1, &str[i], 1);
+		}
+		else
+		{
+			printHexa(str[i]);
 		}
 		i++;
 	}
-	return (1);
 }
 // int main(void)
 // {
-// 	char source[] ="gHG\a";
+// 	char source[] ="Coucou\ntu vas bien ?";
 // 	char *point = source;
-// 	printf("%d\n", ft_str_is_printable(point));
+// 	ft_putstr_non_printable(point);
 // 	return 0;
 // }
