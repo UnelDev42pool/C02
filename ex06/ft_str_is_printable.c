@@ -6,14 +6,13 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 22:26:49 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 14:34:03 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 21:08:04 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 int	char_is_printable(char c)
 {
-	if (c <= ' ' || c >= '~')
+	if (c < ' ' || c > '~')
 	{
 		return (1);
 	}
@@ -39,9 +38,10 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
+// #include <stdio.h>
 // int main(void)
 // {
-// 	char source[] ="gHG\a";
+// 	char source[] ="asd f~gh";
 // 	char *point = source;
 // 	printf("%d\n", ft_str_is_printable(point));
 // 	return 0;

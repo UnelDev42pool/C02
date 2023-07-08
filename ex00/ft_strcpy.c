@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 10:14:20 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/07 10:49:28 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 20:29:44 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	i++;
+	dest[i] = '\0';
 	return (dest);
 }
 

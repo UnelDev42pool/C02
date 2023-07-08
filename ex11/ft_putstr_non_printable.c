@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:14:43 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 14:36:38 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 21:04:40 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_putstr_non_printable(char *str)
 		}
 		else
 		{
-			printHexa(str[i]);
+			print_hexa(str[i]);
 		}
 		i++;
 	}
