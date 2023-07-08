@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 22:26:49 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 14:31:33 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 14:34:03 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-
 		if (char_is_printable(str[i]) == 1)
 		{
 			return (0);

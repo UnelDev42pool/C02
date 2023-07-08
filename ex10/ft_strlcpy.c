@@ -6,23 +6,23 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 09:40:15 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 10:59:07 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 14:35:05 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] != '\0')
 	{
-		if(i < size)
+		if (i < size)
 		{
 			dest[i] = src[i];
 		}
-		if ( i == size - 1)
+		if (i == size - 1)
 		{
 			dest[i] = '\0';
 		}

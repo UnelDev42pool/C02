@@ -6,26 +6,27 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 11:14:43 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 14:29:45 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/08 14:36:38 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	printHexa(int c)
+void	print_hexa(int c)
 {
 	const char	backslash = '\\';
 	const char	zero = '0';
-	if(c <= 16)
+
+	if (c <= 16)
 	{
 		write(1, &backslash, 1);
 		write(1, &zero, 1);
-		if(c <= 9)
+		if (c <= 9)
 		{
 			c += 48;
 			write(1, &c, 1);
 		}
-		else 
+		else
 		{
 			c += 87;
 			write(1, &c, 1);
@@ -33,8 +34,8 @@ void	printHexa(int c)
 	}
 	else
 	{
-		printHexa(c % 16);
-		printHexa(c / 16);
+		print_hexa(c % 16);
+		print_hexa(c / 16);
 	}
 }
 
@@ -49,12 +50,12 @@ int	char_is_printable(char c)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if(!char_is_printable(str[i]) || str[i] == ' ')
+		if (!char_is_printable(str[i]) || str[i] == ' ')
 		{
 			write(1, &str[i], 1);
 		}
