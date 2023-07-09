@@ -6,7 +6,7 @@
 /*   By: edi-iori <edi-iori@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 09:40:15 by edi-iori          #+#    #+#             */
-/*   Updated: 2023/07/08 21:01:17 by edi-iori         ###   ########lyon.fr   */
+/*   Updated: 2023/07/09 09:11:19 by edi-iori         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		if (i == size - 1)
+		if (i == size)
 		{
 			dest[i] = '\0';
 		}
-		else if (i < size - 1)
+		else if (i < size)
 		{
 			dest[i] = src[i];
 		}
