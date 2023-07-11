@@ -14,15 +14,12 @@
 
 void	print_hexa(int c, int first_time)
 {
-	const char	backslash = '\\';
-	const char	zero = '0';
-
 	if (c <= 16)
 	{
 		if (first_time)
 		{
-			write(1, &backslash, 1);
-			write(1, &zero, 1);
+			write(1, "\\", 1);
+			write(1, "0", 1);
 		}
 		if (c <= 9)
 		{
@@ -37,7 +34,7 @@ void	print_hexa(int c, int first_time)
 	}
 	else
 	{
-		write(1, &backslash, 1);
+		write(1, "\\", 1);
 		print_hexa(c / 16, 0);
 		print_hexa(c % 16, 0);
 	}
